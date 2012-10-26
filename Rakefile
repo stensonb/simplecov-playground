@@ -1,8 +1,8 @@
 require "bundler/gem_tasks"
 require 'rspec/core/rake_task'
 
-RSpec::Core::RakeTask.new(:spec) {|t|
-}
+RSpec::Core::RakeTask.new(:spec) #{|t|
+#}
 
 task :coverage do
   # add simplecov
