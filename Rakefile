@@ -1,16 +1,15 @@
 require "bundler/gem_tasks"
 require 'rspec/core/rake_task'
 
-RSpec::Core::RakeTask.new(:spec) #{|t|
-#}
+RSpec::Core::RakeTask.new(:spec)
+
+task :default => :spec
 
 task :coverage do
   # add simplecov
-  require 'simplecov'
-  SimpleCov.start
+  ENV["COVERAGE"] = 'yes'
 
   # run the specs
   Rake::Task['spec'].execute
 end
 
-task :default => :spec
